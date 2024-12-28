@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Grade Map</title>
+    <style>
+        .grade-details {
+            display: none; /* اخفاء التفاصيل بشكل افتراضي */
+        }
+    </style>
+</head>
+<body>
+    <h1>Grade Map</h1>
+    <table border="1" cellpadding="10" cellspacing="0" width="300">
+        <tr>
+            <td><a href="#" onclick="showGrade('A')">A</a></td>
+            <td><a href="#" onclick="showGrade('B')">B</a></td>
+        </tr>
+        <tr>
+            <td><a href="#" onclick="showGrade('C')">C</a></td>
+            <td><a href="#" onclick="showGrade('D')">D</a></td>
+        </tr>
+    </table>
+
+    <!-- هنا التفاصيل لكل درجة -->
+    <div id="A" class="grade-details">
+        <h2>Grade A</h2>
+        <p>An excellent performance, ranging from 90% to 100%.</p>
+    </div>
+
+    <div id="B" class="grade-details">
+        <h2>Grade B</h2>
+        <p>A good performance, ranging from 80% to 89%.</p>
+    </div>
+
+    <div id="C" class="grade-details">
+        <h2>Grade C</h2>
+        <p>A satisfactory performance, ranging from 70% to 79%.</p>
+    </div>
+
+    <div id="D" class="grade-details">
+        <h2>Grade D</h2>
+        <p>A passing performance, ranging from 60% to 69%.</p>
+    </div>
+
+    <script>
+        // دالة لإظهار التفاصيل بناءً على الدرجة المختارة
+        function showGrade(grade) {
+            // إخفاء كل التفاصيل
+            var allGrades = document.getElementsByClassName('grade-details');
+            for (var i = 0; i < allGrades.length; i++) {
+                allGrades[i].style.display = 'none';
+            }
+            
+            // إظهار التفاصيل الخاصة بالدرجة المحددة
+            document.getElementById(grade).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
